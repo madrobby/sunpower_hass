@@ -58,8 +58,8 @@ def refresh_token(username, password):
         content = json.loads(resp.read().decode('utf-8'))
         #assert content["StatusCode"] == "200", "Fetch failed! {}".format(
         #    content)
-        print(content)
-        print(time.time())
+        #print(content)
+        #print(time.time())
         expiry = content["expiresEpm"] - 300 # 5 minute fuzz
         token = content["tokenID"]
         return {"expiry": expiry, "tokenID": token}
